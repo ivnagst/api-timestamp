@@ -1,0 +1,25 @@
+{
+  "name": "api-timestamp",
+  "version": "1.0.0",
+  "description": "This is an exercise of freeCodeCamp platform",
+  "main": "index.ts",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "type": "module",
+  "dependencies": {
+    "cors": "^2.8.0",
+    "express": "^4.12.4"
+  },
+  "author": "Ivan A F Aguiar",
+  "keywords": [
+    "node",
+    "express",
+    "freeCodeCamp"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21"
+  }
+}
