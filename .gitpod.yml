@@ -7,4 +7,5 @@ ports:
 
 tasks:
   - init: npm install
+    compile: tsc
     command: npm run start
