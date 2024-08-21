@@ -10,9 +10,7 @@ app.get("/api", (req, res) => {
 });
 
 app.get("/api/:timestamp", (req, res) => {
-  const input = req.params.timestamp;
-
-  const date = input ? new Date(input) : new Date();
+  const timestamp = req.params.timestamp;
 
   // Verifica se a data é válida
   if (isNaN(Number(timestamp)) && timestamp.length === 13) {
