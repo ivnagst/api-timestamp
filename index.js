@@ -12,21 +12,23 @@ app.get("/api", (req, res) => {
 app.get("/api/:timestamp", (req, res) => {
   const timestamp = req.params.timestamp;
 
-  // Verifica se a data é válida
-  if (isNaN(Number(timestamp)) && timestamp.length === 13) {
-    return res.json({
-      unix: timestamp,
-      utc: new Date(Number(timestamp)).toUTCString(),
-    });
+  let date;
+
+  // Check if the timestamp is a number
+  if (!isNaN(Number(timestamp))) {
+    date = new Date(Number(timestamp));
+  } else {
+    date = new Date(timestamp);
   }
 
-  if (new Date(timestamp).toUTCString() !== "Invalid Date") {
-    return res.json({
-      unix: new Date(timestamp).getTime(),
-      utc: timestamp,
-    });
+  if (date.toUTCString() === "Invalid Date") {
+    return res.status(400).json({ error: "Invalid Date" });
   }
-  res.send(timestamp);
+
+  res.json({
+    unix: date.getTime(),
+    utc: date.toUTCString(),
+  });
 });
 
 app.listen(port, () => {

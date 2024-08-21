@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "This is an exercise of freeCodeCamp platform",
   "main": "index.ts",
-  "type": "module",
   "scripts": {
     "start": "node index.js"
   },
